@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link href="css/mystyles.css" rel="stylesheet">
+</head>
+
+<body>
+
+
+        <nav class="navbar navbar-expand-lg bg-light" id="myNav">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">ITWD6.408</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarOffCanvasLg"
+                aria-controls="navbarOffcanvasLg">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="offcanvas offcanvas-end h-50" tabindex="-1" id="navbarOffCanvasLg"
+                aria-labelledby="navbarOffcanvasLgLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="navbarOffcanvasLgLabel">Offcanvas</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="forms.html">Forms</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="xml-rss.html">XML/JSON</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="javascript.html">JavaScript</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="research.html">Research</a>
+                        </li>
+                    </ul>
+                    <!--<form class="d-flex mt-3" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>-->
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="container-fluid" id="formPageContent">
+        <div class="row">
+            <!--Take up a full 12 segments (mobile first approach), on a medium screen take up 3 (The form takes up the other 9)-->
+            <div class="col-12 col-md-3" id="formType">
+                <div class="row">
+
+                    <!--The buttons will be side by side on a mobile, and on top of one another on a larger screen-->
+                    <!--The "m" in the class is for the margin. There is no margin by default (mobile first) and a margin set to 3 on larger screens. (I think bootstrap's 3 setting is 16px)-->
+                    <!--<div class="col-6 col-md-12 m-md-3 me-md-5 border" id="htmlFormButton">
+                        This ^ was stuff I had dealing with bootstrap buttons, I'm going to make my own buttons and see if I run into the same problem-->
+
+
+
+
+
+                    <div class="col-6">
+                        <button class="button formButtons" id="htmlButton" onclick="formButton(this.id)">HTML Form</button>
+                    </div>
+                    <div class="col-6">
+                        <button class="button formButtons" id="googleButton" onclick="formButton(this.id)">Google Form</button>
+                    </div>
+
+
+
+                </div>
+
+            </div>
+
+
+            <!--The form takes up the full 12 on mobile (mobile first) but on a larger screen takes up 9 (the buttons take up 3)-->
+            <div class="col-12 col-md-9" id="myForm">
+                <div id="htmlForm">
+                <form name="techform" action=" https://pttech.co.nz/API/handlesurvey.php" method="post">
+                    <div class="htmlForm row">
+                        <label for="inputName" class="form-label col-12 col-md-2">First Name:</label>
+                        <div class="col">
+                            <input type="text" class="form-control" id="inputName" required>
+                        </div>
+                    </div>
+                    <div class="htmlForm row">
+                        <label for="inputName2" class="form-label col-12 col-md-2">Last Name:</label>
+                        <div class="col">
+                            <input type="text" class="form-control" id="inputName2" required>
+                        </div>
+                    </div>
+
+                    <p><b>Address</b></p>
+
+                    <div class="htmlForm row">
+                        <label for="inputAddress" class="form-label col-12 col-md-2">line 1:</label>
+                        <div class="col">
+                            <input type="text" class="form-control" id="inputName" required>
+                        </div>
+                    </div>
+                    <div class="htmlForm row">
+                        <label for="inputAddress2" class="form-label col-12 col-md-2">line 2:</label>
+                        <div class="col">
+                            <input type="text" class="form-control" id="inputName2">
+                        </div>
+                    </div>
+                    <div class="htmlForm row">
+                        <label for="inputAddress3" class="form-label col-12 col-md-2">Town/City:</label>
+                        <div class="col">
+                            <input type="text" class="form-control" id="inputName2" required>
+                        </div>
+                    </div>
+
+                    <fieldset class="form-group">
+                        <div class="htmlForm row">
+                            <legend class="col-form-label col-12 col-md-2">Gender:</legend>
+                            <!--Needs 50% padding from the top so the buttons are inline with the text on large screens-->
+                            <!--There also needs padding from the start or else, small screens has the male option off screen and on big screens it isn't inline with the other form questions-->
+                            <div class="form-check col pt-md-2 ps-5">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="gender1"
+                                    value="option1" required>
+                                <label class="form-check-label" for="inlineRadio1">Male</label>
+                            </div>
+                            <div class="form-check col pt-md-2">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="gender2"
+                                    value="option2">
+                                <label class="form-check-label" for="inlineRadio1">Female</label>
+                            </div>
+                            <div class="form-check col pt-md-2">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="gender3"
+                                    value="option3">
+                                <label class="form-check-label" for="inlineRadio1">Other</label>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <fieldset class="form-group">
+                        <div class="htmlForm row">
+                            <legend class="col-form-label col-12 col-md-2">Mobile Phone Type:</legend>
+                            <!--Needs 50% padding from the top so the buttons are inline with the text on large screens-->
+                            <!--There also needs padding from the start or else, small screens has the male option off screen and on big screens it isn't inline with the other form questions-->
+                            <div class="form-check col pt-md-2 ps-5">
+                                <input class="form-check-input" type="checkbox" name="inlineCheckbox" id="phoneType1"
+                                    value="option1">
+                                <label class="form-check-label" for="inlineCheckbox1">Windows</label>
+                            </div>
+                            <div class="form-check col pt-md-2">
+                                <input class="form-check-input" type="checkbox" name="inlineCheckbox" id="phoneType2"
+                                    value="option2">
+                                <label class="form-check-label" for="inlineCheckbox2">Apple</label>
+                            </div>
+                            <div class="form-check col pt-md-2">
+                                <input class="form-check-input" type="checkbox" name="inlineCheckbox" id="phoneType3"
+                                    value="option3">
+                                <label class="form-check-label" for="inlineCheckbox3">Android</label>
+                            </div>
+                            <div class="form-check col pt-md-2">
+                                <input class="form-check-input" type="checkbox" name="inlineCheckbox" id="phoneType4"
+                                    value="option4">
+                                <label class="form-check-label" for="inlineCheckbox4">Other</label>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <!--<div class="col-auto my-1">-->
+                    <fieldset class="form-group">
+                        <div class="htmlForm row">
+                            <label class="mobile-provider col-12 col-md-2" for="inlineFormCustomSelect">Mobile
+                                Provider:</label>
+                            <div class="col">
+                                <select class="form-select" style="width: 120px" aria-label="Default select example">
+                                    <option selected>None</option>
+                                    <option value="1">Spark</option>
+                                    <option value="2">2Degrees</option>
+                                    <option value="3">One NZ</option>
+                                    <option value="4">Other</option>
+                                </select>
+                            </div>
+                        </div>
+
+
+
+                        <div class="htmlForm row">
+                            <label class="col-form-label col-12 col-md-2">Do you use your phone for study? Please explain:</label>
+                            <div class="col">
+                                <textarea class="form-control" aria-label="With textarea"></textarea>
+                            </div>
+                        </div>
+                        <div class="reset-submit row">
+                            <div class="col-form-label col-12 col-md-2"></div> <!--This div is just taking up a bit of empty space so the buttons are inline with the entry fields-->
+                            <div class="col">
+                                <input type="reset" value="Reset" />
+                                <input type="submit" value="Submit" />
+                            </div>
+                        </div>
+</fieldset>
+
+                </form></div>
+
+
+
+                <div id="googleForm" style="display: none;">
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfApwPJognakGCUZ2KTucg-VLTtcYNOUfVbWOdDMyynTqE-Jg/viewform?embedded=true" width="100%" height="1501" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+        </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="container-fluid" id="myFooter">
+        <div id="socials">Facebook, Youtube</div>
+        <div id="copyright">© Sabian Coomber</div>
+        <div id="privacyPolicy"><a href="privacy_policy.html">Privacy Policy</a></div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+
+    <!--defer is so the javascript loads after the main html stuff-->
+    <script defer src="js/myScript.js"></script>
+</body>
+
+</html>
