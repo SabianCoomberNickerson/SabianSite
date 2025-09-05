@@ -1,0 +1,367 @@
+#myNav {
+background: #CDE2C6;
+background: linear-gradient(180deg,rgba(205, 226, 198, 1) 0%, rgba(154, 207, 126, 1) 100%);
+}
+
+.offcanvas.showing, .offcanvas.show {
+  background: linear-gradient(180deg,rgba(255, 255, 255, 1) 0%, rgba(173, 173, 173, 1) 100%);
+}
+
+
+
+#myNav a.nav-link {
+    text-transform: uppercase;
+}
+
+
+#navbarSupportedContent {
+  background: transparent;
+}
+
+.navbar-collapse.collapsing,
+.navbar-collapse.show {
+    padding-top: 30px;
+    background-color: blue;
+    background: linear-gradient(180deg,rgba(255, 255, 255, 1) 0%, rgba(173, 173, 173, 1) 100%);
+}
+
+
+
+.active {
+  background-color: yellow;
+}
+
+#myHero {
+ background-image: url("../images/javascript-code.jpg");
+ background-color: blue; /*To be used if image is unavailable*/
+ background-size: cover;
+ background-position: center;
+ background-repeat: no-repeat;
+ height: 40vh;
+}
+
+#heroBox {
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
+}
+
+#myAbout {
+    background-color: orange;
+}
+
+#myBio {
+    background-color: orange;
+}
+
+#myWebTechs {
+    background: #FDC8C4;
+background: linear-gradient(180deg, rgba(253, 200, 196, 1) 0%, rgba(230, 108, 103, 1) 100%);
+}
+
+#myWebDev {
+    background-color: chartreuse;
+}
+
+.capH2 {
+    text-transform: uppercase;
+}
+
+.capP {
+  text-transform: uppercase;
+}
+
+.ruleBoxes h3 {
+  text-transform: capitalize;
+}
+
+.ruleBoxes {
+  background-color: lightgrey;
+}
+
+code {
+  font-family: robot,"robot";
+  color: blue;
+  background-color: lightgrey;
+  padding: 2px;
+  font-size: 105%;
+}
+
+pre, .codeBit {
+  font-family: robot,"robot";
+  color: blue;
+  background-color: lightgrey;
+  padding: 2px;
+  font-size: 105%;
+}
+
+
+
+.formButtons {
+  border-color: black;
+  color: black;
+  padding: 0px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 10px;
+  cursor: pointer;
+
+  background-color: white;
+  width: 100%;
+}
+
+/* For some reason the text for the unselected google form on mobile is supposed to be black, I'm not sure if that's meant to indicate the option hasn't been clicked before and goes to blue to show you have clicked it.
+  Or if it's some stylised choice for mobile, but in the image where the google form is clicked, the html button is still blue. Maybe that is a history thing then? And it isn't related to screen size. I think that makes the most sense.*/
+
+
+
+#myForm {
+  background-color: lightgray;
+}
+
+
+
+
+
+/* The flip box container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+.flip-box {
+  background-color: transparent;
+  /*There was a width here but it was screwing up the bootstrap grid system*/
+  height: 200px;
+  /*border: 1px solid #f1f1f1;*/
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+}
+
+.flip-box.researchBox {
+  height: 420px;
+}
+
+
+
+/* This container is needed to position the front and back side */
+.flip-box-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-box:hover .flip-box-inner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-box-front, .flip-box-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+  border: 2px solid #68a38c;
+}
+
+/* Style the front side */
+.flip-box-front {
+  background-color: #b1e2e7;
+  color: black;
+}
+
+/*.flip-box-front h2 {
+    text-transform: uppercase;
+}*/
+
+/* Style the back side */
+.flip-box-back {
+  background-color: #b1e2e7;
+  color: white;
+  transform: rotateY(180deg);
+}
+
+/*The research flip boxes are another colour, the first one is also another colour*/
+/*There's probably a more efficient way to do this, because I'm adding the word "researchOthers" to both the front and back flipbox classes. I should be able to access the flipboxes through the parent class but it wasn't working and this does*/
+.flip-box-front.researchFirst, .flip-box-back.researchFirst {
+  background-color: #fff2ce;
+  border-color: #c7ba7d;
+  color: black;
+}
+
+.flip-box-front.researchOthers, .flip-box-back.researchOthers {
+  background-color: #ffe6cd;
+  border-color: #c8aa5c;
+  color: black;
+}
+
+/*For some reason it puts the text in the centre but not the number which doesn't look good*/
+.olLeftAlign {
+  text-align: left; 
+}
+
+/*Actually this one I do want in the centre*/
+.olCenterAlign {
+  list-style-position: inside; /* Places the numbers inside the content flow of the list item */
+  text-align: center;
+  padding-left: 0; /* Removes default padding that might affect alignment */
+}
+
+/*There's a lot of text in this box so I'm making the font size smaller*/
+/*Now that there's three of them doing the same thing I should probably make this into its own class but eh.*/
+#flipbackResearchBox2 {
+  font-size: 0.75em;
+} 
+
+#flipbackResearchBox5 {
+  font-size: 0.75em;
+}
+
+#flipbackResearchBox6 {
+  font-size: 0.70em
+}
+
+/*This is for when I used p tags between ordered lists but I didn't want heaps of space between them.*/
+.pNoMargin p {
+  margin:0;
+}
+
+.demoButtons {
+  border-color: black;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+
+  background-color: black;
+}
+
+/* It looks really ugly but on the lab guide one of the buttons had an orange border, so I'm guessing this is for when the cursor hovers over it. (This isn't seen on the mobile examples which confirms my suspicions)*/
+.demoButtons:hover {
+  border-color: orange;
+}
+
+
+
+/* Large screen (bootstrap lg class is 960px) (Actually I think I've been using md in my code, whatever) */
+@media only screen 
+and (min-width : 960px) {
+  .demoButtons {
+    color: black;
+    background-color: white;
+}
+}
+
+/*
+.demoButton1 {background-color: #04AA6D;}
+.demoButton2 {background-color: #008CBA;}
+.demoButton3 {background-color: #04AA6D;}
+.demoButton4 {background-color: #008CBA;}*/
+
+#demo1 {
+  background-color: white;
+}
+/*
+#autoSlideshow {
+ max-width; // Uh lookup bootstrap images or something.
+}*/
+
+
+/*These are the boxes around the slide shows*/
+#automaticSlideShow {
+  background-color: #fff2ce;
+  border-color: #c7ba7d;
+}
+
+#manualSlideShow {
+  background-color: #ffe6cd;
+  border-color: #c8aa5c;
+}
+
+/*These are the slideshows themselves*/
+#autoSlideShow img {
+  justify-content: center;
+  display: block;
+  margin: 0 auto;
+}
+
+#manSlideShow img {
+  justify-content: center;
+  display: block;
+  margin: 0 auto;
+}
+/*
+#buttonsAndImage {
+  align-items: center;
+}*/
+
+
+
+#demo2 {
+  background-color: lightslategrey;
+}
+
+.question{
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+.answers {
+  margin-bottom: 20px;
+  text-align: left;
+  display: inline-block;
+}
+.answers label{
+  display: block;
+  margin-bottom: 10px;
+}
+
+
+
+
+
+
+
+#demo3 {
+  background-color: white;
+}
+
+#commentProduct {
+  background-color: royalblue;
+  color: black;
+}
+
+#comments p {
+ border: 1px solid black;
+}
+
+
+
+
+
+
+
+#demo4 {
+  background-color: purple;
+}
+
+
+
+#myStatement {
+    background-color: rgba(227, 119, 1, 1);
+}
+
+#myFooter {
+    background-color: green;
+}
+
+#privacyPolicy, a {
+  color: black;
+}
+
+#privacyPolicyPage {
+  background-color: lightgray;
+}
